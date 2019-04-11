@@ -2,11 +2,12 @@ package com.suxs.common.base;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 
 import java.util.List;
 
-public abstract class BaseService<T extends BaseDao, E extends BaseEntity> {
+public abstract class BaseService<T extends JpaRepository, E extends BaseEntity> {
 
     @Autowired
     private T dao;
