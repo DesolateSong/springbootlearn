@@ -1,0 +1,41 @@
+logging:
+  #日志存储地址
+  file: "logs/config/learn.log"
+info:
+  name: "入门案例"
+
+
+server:
+  port: 8092
+  servlet:
+    context-path: '/learn'
+
+spring:
+  datasource:
+    name: 'devDatasource'
+    url: 'jdbc:mysql://127.0.0.1:3306/shequ?useUnicode=true&characterEncoding=utf-8&useSSL=true'
+    username: 'root'
+    password: 'root'
+    driver-class-name: 'com.mysql.jdbc.Driver'
+    type: com.alibaba.druid.pool.DruidDataSource
+    # 使用druid数据源
+    filters: stat
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  # 设置json显示的格式化
+  # jackson:
+  # serialization: true
